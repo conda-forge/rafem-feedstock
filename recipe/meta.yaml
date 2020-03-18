@@ -24,7 +24,7 @@ requirements:
     - bmipy
     - click
     - numpy
-    - matplotlib
+    - matplotlib-base
     - pyyaml
     - scipy
     - six
@@ -35,6 +35,11 @@ test:
   commands:
     - rafem --version
     - rafem --help
+    - rafem show --help
+    - rafem setup --help
+    - rafem run --help
+    - rafem plot --help
+    - rafem show rafem
 
 about:
   home: https://github.com/katmratliff/rafem
