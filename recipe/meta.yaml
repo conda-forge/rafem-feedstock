@@ -1,4 +1,4 @@
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: rafem
@@ -6,28 +6,27 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/rafem/rafem-{{ version }}.tar.gz
-  sha256: 5cca579ee1919c31677eee49f0d6dc0cfe5b430bdb78212c1cc2fbcdccd1732c
+  sha256: 0fed7a0a52411d3d72de8607b3517e188ceedea76b5a42eb932ef883e9930fa6
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
-    - rafem = rafem.main:main
+    - rafem = rafem.main:rafem
 
 requirements:
   host:
-    - python
+    - python >=3
     - pip
   run:
-    - python
+    - python >=3
     - bmipy
     - click
     - numpy
-    - matplotlib
+    - matplotlib-base
     - pyyaml
     - scipy
-    - six
 
 test:
   imports:
@@ -35,13 +34,18 @@ test:
   commands:
     - rafem --version
     - rafem --help
+    - rafem show --help
+    - rafem setup --help
+    - rafem run --help
+    - rafem plot --help
+    - rafem show rafem
 
 about:
   home: https://github.com/katmratliff/rafem
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'The River Avulsion and Floodplain Evolution Model'
+  summary: The River Avulsion and Floodplain Evolution Model
   description: |
     The River Avulsion and Floodplain Evolution Model (RAFEM) is
     a cellular model that simulates river and floodplain morphodynamics
