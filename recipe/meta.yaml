@@ -27,7 +27,6 @@ requirements:
     - matplotlib-base
     - pyyaml
     - scipy
-    - six
 
 test:
   imports:
