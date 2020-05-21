@@ -1,12 +1,12 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: rafem
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/rafem/rafem-{{ version }}.tar.gz
-  sha256: 0fed7a0a52411d3d72de8607b3517e188ceedea76b5a42eb932ef883e9930fa6
+  url: https://github.com/mcflugen/rafem/archive/v{{ version }}.tar.gz
+  sha256: 7e9ef316a23bac3234723a1a533b04f5e7fc6dd02a05afa9d015d0fc6328f15b
 
 build:
   noarch: python
